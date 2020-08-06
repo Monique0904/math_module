@@ -1,0 +1,38 @@
+#program start
+
+#input section
+	#input "How tall is the cone?" into the variable coneHeight
+	#input "What is the radius of the cone?" into the variable coneRadius 
+	
+#processing section
+	#surface area equals π*coneRadius(coneRadius + √(coneHeight^2 + coneRadius^2))
+	#volume equals π*coneRadius^2*(coneHeight/3) 
+	
+#output section
+	#display "Melanie is eating ice cream with her friends and wants to calculate the volume and surface area of her ice cream cone. "
+	#display "Provide the radius and its height."
+	#display "With a height of " + str(coneHeight) + " cm,"
+	#display "and a radius of " + str(coneRadius) + " cm"
+	#display "The cone has a surface area of " + str(coneSArea) + " cm squared,"
+	#display "and a volume of " + str(coneVolume) + " cm cubed"
+	
+#eop
+
+from math import*
+
+def main():
+
+	print("Melanie is eating ice cream with her friends and wants to calculate the volume and surface area of her ice cream cone. ")
+	print("Provide the radius and its height.")
+	coneHeight = float(input("How tall is the cone?"))
+	print("With a height of " + str(coneHeight) + " cm,")
+	coneRadius = float(input("What is the radius of the cone?"))
+	print("and a radius of " + str(coneRadius) + " cm")
+	l = sqrt(coneRadius * coneRadius + coneHeight * coneHeight)
+	coneSArea = 3.14 * coneRadius * (coneRadius + l)
+	print("The cone has a surface area of " + str(coneSArea) + " cm squared,")
+	two = pow(coneRadius, 2)
+	coneVolume = float(3.14 * two * coneHeight/3)
+	print("and a volume of " + str(coneVolume) + " cm cubed")
+
+main()
